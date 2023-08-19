@@ -1,0 +1,42 @@
+plugins {
+    alias(libs.plugins.androidApplication)
+}
+
+android {
+    namespace 'com.hiiro.fuckddvip'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.hiiro.fuckddvip"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+        resConfigs "zh"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+//    implementation libs.material
+//    implementation libs.constraintlayout
+//    testImplementation libs.junit
+//    androidTestImplementation libs.androidx.test.ext.junit
+//    androidTestImplementation libs.espresso.core
+    compileOnly libs.api
+}
